@@ -93,7 +93,9 @@ class Filesystem
     {
         $this->disk->put('.gitignore', Gitignore::getContents());
 
-        $directory = $media->id;
+        $namespace = ltrim(config('laravel-medialibrary.namespace', '') . '/', '/');
+        $directory = $namespace . $media->id;
+
         $this->disk->makeDirectory($directory);
         $this->disk->makeDirectory($directory.'/conversions');
 

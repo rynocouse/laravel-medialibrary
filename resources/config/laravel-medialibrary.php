@@ -26,6 +26,11 @@ return [
      */
     'custom_url_generator_class' => '',
 
+    /*
+    * Use namespace to have files stored inside a folder. Leave empty
+    * if you want the file stored at the root level.
+    */
+    'namespace' => '',
 
     's3' => [
         /*

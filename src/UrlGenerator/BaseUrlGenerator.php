@@ -61,7 +61,8 @@ abstract class BaseUrlGenerator
      */
     public function getPathRelativeToRoot()
     {
-        $path = $this->media->id;
+        $namespace = ltrim(config('laravel-medialibrary.namespace', '') . '/', '/');
+        $path = $namespace . $this->media->id;
 
         if (is_null($this->conversion)) {
             return $path.'/'.$this->media->file_name;
